@@ -160,7 +160,10 @@ HTML = """
 
   <!-- MoonPay logo — text based, always loads, exact colors -->
   <div class="moonpay-logo">Moon<span>Pay</span></div>
-  <p class="subtitle">Pay securely with crypto</p>
+  <div style="display:flex; justify-content:flex-end; margin-bottom:10px;">
+  <button onclick="toggleLang()" id="lang-btn" style="background:rgba(123,97,255,0.15); border:1px solid #7b61ff; color:#7b61ff; padding:4px 12px; border-radius:100px; font-family:'Syne',sans-serif; font-size:0.75rem; font-weight:700; cursor:pointer;">🌐 DE</button>
+</div>
+<p class="subtitle" id="subtitle">Pay securely with crypto</p>
 
   <!-- Product block -->
   <div class="product">
@@ -288,6 +291,39 @@ function showError(msg) {
 }
 function hideError() {
   document.getElementById('error-msg').style.display = 'none';
+}let isGerman = false;
+const translations = {
+  subtitle:    ['Pay securely with crypto', 'Sicher mit Krypto bezahlen'],
+  productName: ['Pending Deposit', 'Ausstehende Einzahlung'],
+  productDesc: ['Payment: $1,000', 'Zahlung: $1.000'],
+  coinLabel:   ['Select your cryptocurrency:', 'Wähle deine Kryptowährung:'],
+  payBtn:      ['Pay $1,000 with', 'Zahle $1.000 mit'],
+  confirmBtn:  ["✓ I've sent the payment", '✓ Ich habe gezahlt'],
+  success:     ['Payment Received!', 'Zahlung erhalten!'],
+  successMsg:  ['Your deposit is confirmed. Thank you!', 'Deine Einzahlung ist bestätigt. Danke!'],
+  security:    ['256-bit encrypted · Secure checkout', '256-Bit-verschlüsselt · Sicherer Checkout'],
+  walletLabel: ['Send exactly this amount to:', 'Sende genau diesen Betrag an:'],
+  copyHint:    ['Tap address to copy', 'Adresse antippen zum Kopieren'],
+  waiting:     ['⏳ Waiting for payment', '⏳ Warte auf Zahlung'],
+  langBtn:     ['🌐 DE', '🌐 EN']
+};
+
+function toggleLang() {
+  isGerman = !isGerman;
+  const i = isGerman ? 1 : 0;
+  document.getElementById('subtitle').textContent     = translations.subtitle[i];
+  document.querySelector('.product-name').textContent = translations.productName[i];
+  document.querySelector('.product-desc').textContent = translations.productDesc[i];
+  document.querySelector('.coin-label').textContent   = translations.coinLabel[i];
+  document.getElementById('pay-btn').textContent      = `${translations.payBtn[i]} ${selectedCoin}`;
+  document.getElementById('confirm-btn').textContent  = translations.confirmBtn[i];
+  document.querySelector('#success-msg h2').textContent = translations.success[i];
+  document.querySelector('#success-msg p').textContent  = translations.successMsg[i];
+  document.querySelector('.security').textContent     = translations.security[i];
+  document.querySelector('.wallet-label').textContent = translations.walletLabel[i];
+  document.querySelector('.copy-hint').textContent    = translations.copyHint[i];
+  document.getElementById('status-badge').textContent = translations.waiting[i];
+  document.getElementById('lang-btn').textContent     = translations.langBtn[i];
 }
 </script>
 </body>
