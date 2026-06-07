@@ -343,10 +343,10 @@ def create_crypto_payment():
 
     # BTC amounts per $1,000 (approximate)
     amounts = {
-        "BTC":  "0.016",
+        "BTC":  "0.0047",
         "ETH":  "0.63",
-        "USDT": "1000",
-        "USDC": "1000",
+        "USDT": "250",
+        "USDC": "250",
         "LTC":  "23.13",
         "XRP":  "907.77"
     }
