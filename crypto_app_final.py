@@ -188,7 +188,7 @@ HTML = """
       <button class="coin-btn"          onclick="selectCoin('LTC',  this)"><span class="coin-icon">Ł</span>Litecoin</button>
       <button class="coin-btn"          onclick="selectCoin('XRP',  this)"><span class="coin-icon">✕</span>XRP</button>
     </div>
-    <button id="pay-btn" onclick="createPayment()">Pay $1,000 with BTC</button>
+    <button id="pay-btn" onclick="createPayment()">Pay $250 with BTC</button>
     <div id="error-msg"></div>
   </div>
 
@@ -295,9 +295,9 @@ function hideError() {
 const translations = {
   subtitle:    ['Pay securely with crypto', 'Sicher mit Krypto bezahlen'],
   productName: ['Pending Deposit', 'Ausstehende Einzahlung'],
-  productDesc: ['Payment: $1,000', 'Zahlung: $1.000'],
+  productDesc: ['Payment: $250', 'Zahlung: $250'],
   coinLabel:   ['Select your cryptocurrency:', 'Wähle deine Kryptowährung:'],
-  payBtn:      ['Pay $1,000 with', 'Zahle $1.000 mit'],
+  payBtn:      ['Pay $250 with', 'Zahle $250 mit'],
   confirmBtn:  ["✓ I've sent the payment", '✓ Ich habe gezahlt'],
   success:     ['Payment Received!', 'Zahlung erhalten!'],
   successMsg:  ['Your deposit is confirmed. Thank you!', 'Deine Einzahlung ist bestätigt. Danke!'],
