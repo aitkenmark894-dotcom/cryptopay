@@ -171,10 +171,10 @@ HTML = """
       <div class="product-icon">💰</div>
       <div>
         <div class="product-name">Pending Deposit</div>
-        <div class="product-desc">Payment: $1,000</div>
+        <div class="product-desc">Payment: $250</div>
       </div>
     </div>
-    <div class="product-price">$10,000</div>
+    <div class="product-price">$3,500</div>
   </div>
 
   <!-- Step 1: Choose coin -->
